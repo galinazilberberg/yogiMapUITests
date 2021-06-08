@@ -2,6 +2,7 @@ import LandingPage from "./_landing_page";
 
 class JoinUsPage extends LandingPage {
 
+    linkLogoBackButton = () => cy.get ('[href="/"]');
     header = () => cy.get('h1');
     fieldNickName = () => cy.get('#register_name');
     fieldEmail = () => cy.get('#register_email');
@@ -48,5 +49,8 @@ class JoinUsPage extends LandingPage {
         this.checkBox().click();
         this.btnRegister().should('be.enabled');
     };
+    yogimapLogoBackButton(){
+        this.linkLogoBackButton().click();
+    }
 }
 export default JoinUsPage
