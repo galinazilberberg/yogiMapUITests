@@ -2,10 +2,12 @@ import LoginPage from "../support/page_objects/__login_page";
 import {admin, user} from "../fixtures/example.json";
 import JoinUsPage from "../support/page_objects/__join_us_page";
 import ResetPassword from "../support/page_objects/reset_password";
+import LandingPage from "../support/page_objects/_landing_page";
 
 const loginPage= new LoginPage();
 const joinUs = new JoinUsPage();
-const resetPassword = new ResetPassword()
+const resetPassword = new ResetPassword();
+const landingPage = new LandingPage()
 
 describe('Login page', () => {
     beforeEach(() => {
@@ -45,6 +47,10 @@ describe('Login page', () => {
         it('Forgot your password? => Reset it', () => {
             loginPage.resetPasswordFromLogInPage();
             resetPassword.open();
+        });
+        it('YogiMap Back button click => landing page redirect', () => {
+            loginPage.yogimapLogoBackButton();
+            landingPage.navigate();
         });
     });
 });

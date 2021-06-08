@@ -9,6 +9,7 @@ class LoginPage extends LandingPage {
     textCreateAccount = () => cy.get('');
     linkResetPassword = () => cy.get('[href="/user/password/reset/request"]');
     textResetPassword = () => cy.get('');
+    linkLogoBackButton = () => cy.get ('[href="/"]');
 
     isOpen() {
         this.header().should('have.text', 'Welcome back!');
@@ -27,6 +28,7 @@ class LoginPage extends LandingPage {
         this.buttonLogin().should('be.visible');
         this.linkCreateAccount().should('be.visible');
         this.linkResetPassword().should('be.visible');
+        this.linkLogoBackButton().should('be.visible');
     }
     logInPageLabelsCorrect(){
         this.header().should('have.text', 'Welcome back!');
@@ -35,6 +37,7 @@ class LoginPage extends LandingPage {
         this.buttonLogin().should('have.text', 'Log in');
         this.linkCreateAccount().should ('have.text', 'Create one');
         this.linkResetPassword().should ('have.text', 'Reset it');
+        this.linkLogoBackButton().should ('have.text', 'YogiMap');
     }
     logInButtonIsEnabled( email, password) {
         this.fieldEmail().type(email);
@@ -44,8 +47,11 @@ class LoginPage extends LandingPage {
     createAccountfromLogInPage(){
         this.linkCreateAccount().click();
     }
-      resetPasswordFromLogInPage(){
+    resetPasswordFromLogInPage(){
         this.linkResetPassword().click();
-      }
+    }
+    yogimapLogoBackButton(){
+        this.linkLogoBackButton().click();
+    }
 }
 export default LoginPage
