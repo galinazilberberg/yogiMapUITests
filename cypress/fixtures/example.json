@@ -1,0 +1,50 @@
+{
+  "user": {
+    "email": "test@test.com",
+    "password": "123123",
+    "nickName": "test"
+  },
+
+  "admin": {
+    "email": "admin@admin.com",
+    "firstName": "Admin",
+    "password": "123123",
+    "lastName": "Admin"
+  },
+
+  "teacher": {
+    "email": "teacher@teacher.com",
+    "password": "123123",
+    "name": "Guru",
+    "phone": "123456000"
+  },
+  "company": {
+    "name": "Happy LLC",
+    "email": "123@gmail.com",
+    "phoneNumber1_code": "1",
+    "phoneNumber1_ext": "123",
+    "phoneNumber1_number": "7897897878",
+    "phoneNumber2_code": "1",
+    "phoneNumber2_ext": "321",
+    "phoneNumber2_number": "5556667788",
+    "fax": "5554443322",
+    "address": "100 First street",
+    "addressLine1": "",
+    "addressLine2": "",
+    "country": "United States",
+    "city": "Los Angeles",
+    "state": "California",
+    "zipCode": "11001",
+    "timeZone": "America/Los_Angeles"
+  },
+
+
+  "wrongEmail": "wrong@wrong.com",
+  "wrongPassword": "wrongPassword",
+  "upperCase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "lowerCase": "abcdefghijklmnopqrstuvwxyz",
+  "num": "1234567890",
+  "symbols": "§±!@#$%^&*()_+-=`~{}[];:'\"|.<>",
+  "spaces": "       ",
+  "emptyField": ""
+}
