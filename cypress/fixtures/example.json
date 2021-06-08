@@ -39,7 +39,7 @@
   },
 
 
-  "wrongEmail": "wrong@wrong.com",
+  "wrongEmail": "wrongEmail@wrong.com",
   "wrongPassword": "wrongPassword",
   "upperCase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   "lowerCase": "abcdefghijklmnopqrstuvwxyz",
