@@ -1,22 +1,51 @@
 import LoginPage from "../support/page_objects/__login_page";
-import {admin} from "../fixtures/example.json";
-const loginPage= new LoginPage();
+import {admin, user} from "../fixtures/example.json";
+import JoinUsPage from "../support/page_objects/__join_us_page";
+import ResetPassword from "../support/page_objects/reset_password";
 
-describe('Login Admin, Register user', () => {
+const loginPage= new LoginPage();
+const joinUs = new JoinUsPage();
+const resetPassword = new ResetPassword()
+
+describe('Login page', () => {
     beforeEach(() => {
         loginPage.open('/user/login')
     });
     describe ('Login page is open from landing page', () => {
 
-        it('Login page is open', () => {
+        it('Login page has title "Welcome back!"', () => {
             loginPage.isOpen();
         });
     });
-    describe ('Admin login, Admin Logout', () => {
+    describe ('Elements exist and labels are correct', () => {
+
+        it('Elements exist', () => {
+            loginPage.logInPageElementsExist();
+        });
+        it('Labels are correct', () => {
+            loginPage.logInPageLabelsCorrect();
+        });
+    });
+    describe ('Log in button is enabled after filling required fields', () => {
+         it('Login button is enabled after filling required fields', () => {
+            loginPage.logInButtonIsEnabled (user.email, user.password);
+         });
+    });
+    describe ('Functionality: Admin login, Admin Logout', () => {
 
     it('Admin Login, logout', () => {
         loginPage.logIn(admin.email, admin.password);
         loginPage.logOut();
+    });
+    describe ('Additional links redirect', () => {
+        it('Don’t have an account? => Create one', () => {
+            loginPage.createAccountfromLogInPage();
+            joinUs.open();
+        });
+        it('Forgot your password? => Reset it', () => {
+            loginPage.resetPasswordFromLogInPage();
+            resetPassword.open();
+        });
     });
 });
     // it.only('Login as Admin', () => {
